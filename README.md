@@ -8,16 +8,13 @@ Simply extract `onyxlib.zip` from the releases tab straight into your `src` dire
 The library is split into 3 parts: `calc_xp_points`, `rng`, and `math`.
 See below for a list of macros that this library provides:
 
-* `calc_xp_points`
-  Import with `import ./onyxlib/calc_xp_points`
+* `calc_xp_points` - import with `import ./onyxlib/calc_xp_points`
   * `calc_xp_points` - (Usage: `macro calc_xp_points <targets>`. Output is stored in `<player_name> onyx.xp_points`.)
   
-* `rng`
-  Import with `import ./onyxlib/rng`
+* `rng` - import with `import ./onyxlib/rng`
   * `rand_int` - (Usage: `macro rand_int min max`. Both `min` and `max` are inclusive. Output is stored in `$output onyx.rng`.)
   
-* `math`
-  Import with `import ./onyxlib/math`
+* `math` - import with `import ./onyxlib/math`
   * `sin` - (Usage: `macro sin <theta>` or `macro sin <player> <objective>`. Output is stored in `$output onyx.math`.)
   * `cos` - (Usage: `macro cos <theta>` or `macro cos <player> <objective>`. Output is stored in `$output onyx.math`.)
   * `tan` - (Usage: `macro tan <theta>` or `macro tan <player> <objective>`. Output is stored in `$output onyx.math`.)
