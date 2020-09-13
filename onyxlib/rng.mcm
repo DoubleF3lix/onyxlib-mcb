@@ -1,0 +1,6 @@
+macro rand_int {
+    # Set defaults
+    scoreboard players set $min onyx.rng <%!"$$0".startsWith("$$")?"$$0":"-2147483648"%>
+    scoreboard players set $max onyx.rng <%!"$$1".startsWith("$$")?"$$1":"2147483647"%>
+    function onyxlib:rng/main
+}

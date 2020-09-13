@@ -1,0 +1,130 @@
+macro sin {
+    # There is no second argument
+    !IF("$$1".startsWith("$$")){
+        scoreboard players set $input onyx.math <%Math.floor($$0) * 10%>
+    }
+    # Assume a scoreboard player and objective were passed
+    !IF(!"$$1".startsWith("$$")){
+        scoreboard players operation $input onyx.math = $$0 $$1
+    }
+    function onyxlib:math/sin/main
+}
+
+macro cos {
+    # There is no second argument
+    !IF("$$1".startsWith("$$")){
+        scoreboard players set $input onyx.math <%Math.floor($$0) * 10%>
+    }
+    # Assume a scoreboard player and objective were passed
+    !IF(!"$$1".startsWith("$$")){
+        scoreboard players operation $input onyx.math = $$0 $$1
+    }
+    function onyxlib:math/cos/main
+}
+
+macro tan {
+    # There is no second argument
+    !IF("$$1".startsWith("$$")){
+        scoreboard players set $input onyx.math <%Math.floor($$0) * 10%>
+    }
+    # Assume a scoreboard player and objective were passed
+    !IF(!"$$1".startsWith("$$")){
+        scoreboard players operation $input onyx.math = $$0 $$1
+    }
+    function onyxlib:math/tan/mai
+}
+
+macro pow {
+    scoreboard players operation $input onyx.math = $$0 $$1
+    scoreboard players set $exponent onyx.math <%Math.floor($$2)%>
+    function onyxlib:math/pow/main
+}
+
+macro sqrt {
+    # There is no second argument
+    !IF("$$1".startsWith("$$")){
+        scoreboard players set $input onyx.math <%Math.floor($$0)>
+    }
+    # Assume a scoreboard player and objective were passed
+    !IF(!"$$1".startsWith("$$")){
+        scoreboard players operation $input onyx.math = $$0 $$1
+    }
+    function onyxlib:math/sqrt/main
+}
+
+macro NOT {
+    # There is no second argument
+    !IF("$$1".startsWith("$$")){
+        scoreboard players set $input_1 onyx.bitwise <%Math.floor($$0)%>
+    }
+    # Assume a scoreboard player and objective were passed
+    !IF(!"$$1".startsWith("$$")){
+        scoreboard players operation $input_1 onyx.bitwise = $$0 $$1
+    }
+    function onyxlib:math/bitwise/not/main
+}
+
+macro AND {
+    scoreboard players operation $input_1 onyx.bitwise = $$0 $$1
+    # There is no fourth argument, so the third argument is an integer
+    !IF("$$3".startsWith("$$")){
+        scoreboard players set $input_2 onyx.bitwise $$2
+    }
+    # Assume a scoreboard player and objective were passed
+    !IF(!"$$3".startsWith("$$")){
+        scoreboard players operation $input_2 onyx.bitwise = $$2 $$3
+    }
+    function onyxlib:math/bitwise/and/main
+}
+
+macro LEFT_SHIFT {
+    scoreboard players operation $input_1 onyx.bitwise = $$0 $$1
+    # There is no fourth argument, so the third argument is an integer
+    !IF("$$3".startsWith("$$")){
+        scoreboard players set $input_2 onyx.bitwise $$2
+    }
+    # Assume a scoreboard player and objective were passed
+    !IF(!"$$3".startsWith("$$")){
+        scoreboard players operation $input_1 onyx.bitwise = $$2 $$3
+    }
+    function onyxlib:math/bitwise/left_shift/main
+}
+
+macro RIGHT_SHIFT {
+    scoreboard players operation $input_1 onyx.bitwise = $$0 $$1
+    # There is no fourth argument, so the third argument is an integer
+    !IF("$$3".startsWith("$$")){
+        scoreboard players set $input_2 onyx.bitwise $$2
+    }
+    # Assume a scoreboard player and objective were passed
+    !IF(!"$$3".startsWith("$$")){
+        scoreboard players operation $input_1 onyx.bitwise = $$2 $$3
+    }
+    function onyxlib:math/bitwise/right_shift/main
+}
+
+macro OR {
+    scoreboard players operation $input_1 onyx.bitwise = $$0 $$1
+    # There is no fourth argument, so the third argument is an integer
+    !IF("$$3".startsWith("$$")){
+        scoreboard players set $input_2 onyx.bitwise $$2
+    }
+    # Assume a scoreboard player and objective were passed
+    !IF(!"$$3".startsWith("$$")){
+        scoreboard players operation $input_1 onyx.bitwise = $$2 $$3
+    }
+    function onyxlib:math/bitwise/or/main
+}
+
+macro XOR {
+    scoreboard players operation $input_1 onyx.bitwise = $$0 $$1
+    # There is no fourth argument, so the third argument is an integer
+    !IF("$$3".startsWith("$$")){
+        scoreboard players set $input_2 onyx.bitwise $$2
+    }
+    # Assume a scoreboard player and objective were passed
+    !IF(!"$$3".startsWith("$$")){
+        scoreboard players operation $input_1 onyx.bitwise = $$2 $$3
+    }
+    function onyxlib:math/bitwise/xor/main
+}
