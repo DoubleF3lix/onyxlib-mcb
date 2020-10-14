@@ -1,3 +1,0 @@
-macro calc_xp_points {
-    execute as <%"$$0".startsWith("$$")?"$$0":"@a"%> run function onyxlib:calc_xp_points/main
-}

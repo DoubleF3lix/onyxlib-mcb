@@ -1,0 +1,12 @@
+{
+  "languages": [
+    {
+      "name": "lang-mc/dev",
+      "remote": {
+        "type": "github",
+        "owner": "mc-build"
+      }
+    }
+  ],
+  "libs": []
+}

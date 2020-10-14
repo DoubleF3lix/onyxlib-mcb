@@ -10,7 +10,7 @@ function load {
 dir sin {
     function main {
         execute at @p align xz run summon armor_stand ~ ~ ~ {Tags:["trig"]}
-        execute as @e[tag=trig] run function onyxlib:math/sin/calc
+        execute as @e[tag=trig] run function lib:math/sin/calc
     }
 
     function calc {
@@ -24,7 +24,7 @@ dir sin {
 dir cos {
     function main {
         execute at @p align xz run summon armor_stand ~ ~ ~ {Tags:["trig"]}
-        execute as @e[tag=trig] run function onyxlib:math/cos/calc
+        execute as @e[tag=trig] run function lib:math/cos/calc
     }
 
     function calc {
@@ -37,9 +37,9 @@ dir cos {
 
 dir tan {
     function main {
-        function onyxlib:math/cos/main
+        function lib:math/cos/main
         scoreboard players operation #temp1 onyx.math = $output onyx.math
-        function onyxlib:math/sin/main
+        function lib:math/sin/main
         scoreboard players operation $output onyx.math /= #temp1 onyx.math
     }
 }
@@ -49,13 +49,13 @@ dir pow {
         scoreboard players remove $exponent onyx.math 1
         scoreboard players operation $output onyx.math = $input onyx.math
         execute if score $exponent onyx.math matches ..1 run scoreboard players operation $output onyx.math = $input onyx.math
-        execute unless score $exponent onyx.math matches ..1 run function onyxlib:math/pow/add_exponent
+        execute unless score $exponent onyx.math matches ..1 run function lib:math/pow/add_exponent
     }
 
     function add_exponent {
         scoreboard players operation $output onyx.math *= $input onyx.math
         scoreboard players remove $exponent onyx.math 1
-        execute if score $exponent onyx.math matches 1.. run function onyxlib:math/pow/add_exponent
+        execute if score $exponent onyx.math matches 1.. run function lib:math/pow/add_exponent
     }
 }
 
@@ -64,7 +64,7 @@ dir sqrt {
         scoreboard players set $output onyx.math 0
         scoreboard players set #increment onyx.math 32768
         scoreboard players operation $input onyx.math *= #scale_factor onyx.math
-        function onyxlib:math/sqrt/loop
+        function lib:math/sqrt/loop
         scoreboard players operation $input onyx.math /= #scale_factor onyx.math
     }
 
@@ -74,7 +74,7 @@ dir sqrt {
         scoreboard players operation #temp onyx.math *= #temp onyx.math
         execute if score #temp onyx.math <= $input onyx.math run scoreboard players operation $output onyx.math += #increment onyx.math
         scoreboard players operation #increment onyx.math /= $2 onyx.const
-        execute if score #increment onyx.math matches 1.. run function onyxlib:math/sqrt/loop
+        execute if score #increment onyx.math matches 1.. run function lib:math/sqrt/loop
     }
 }
 
@@ -195,7 +195,7 @@ dir bitwise {
             scoreboard players set $input onyx.math 2
             scoreboard players operation $exponent onyx.math = $input_2 onyx.bitwise
             scoreboard players remove $exponent onyx.math 1
-            function onyxlib:math/pow/main
+            function lib:math/pow/main
             scoreboard players operation $output onyx.bitwise *= $output onyx.math
         }
     }
@@ -206,7 +206,7 @@ dir bitwise {
             scoreboard players set $input onyx.math 2
             scoreboard players operation $exponent onyx.math = $input_2 onyx.bitwise
             scoreboard players remove $exponent onyx.math 1
-            function onyxlib:math/pow/main
+            function lib:math/pow/main
             scoreboard players operation $output onyx.bitwise /= $output onyx.math
         }
     }
