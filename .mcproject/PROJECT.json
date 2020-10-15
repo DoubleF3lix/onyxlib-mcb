@@ -1,7 +1,7 @@
 {
   "languages": [
     {
-      "name": "lang-mc/dev",
+      "name": "lang-mc/stable",
       "remote": {
         "type": "github",
         "owner": "mc-build"
