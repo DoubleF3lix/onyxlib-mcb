@@ -14,19 +14,19 @@ function main {
     scoreboard players add $max onyx.rng 1
     scoreboard players operation #range onyx.rng = $max onyx.rng
     scoreboard players operation #range onyx.rng -= $min onyx.rng
-    execute if score #range onyx.rng matches ..-1 run function onyxlib:rng/wrap_around
-    execute if score #range onyx.rng matches 0.. run function onyxlib:rng/normal_start
+    execute if score #range onyx.rng matches ..-1 run function lib:rng/wrap_around
+    execute if score #range onyx.rng matches 0.. run function lib:rng/normal_start
 }
 
 function wrap_around {
-    function onyxlib:rng/lcg
+    function lib:rng/lcg
     execute store success score $is_in_range onyx.rng if score $output onyx.rng < $min onyx.rng
     execute if score $is_in_range onyx.rng matches 0 store success score $is_in_range onyx.rng if score $output onyx.rng > $max onyx.rng
-    execute unless score $is_in_range onyx.rng matches 0 run function onyxlib:rng/wrap_around
+    execute unless score $is_in_range onyx.rng matches 0 run function lib:rng/wrap_around
 }
 
 function lcg {
-    function onyxlib:rng/lcg_raw
+    function lib:rng/lcg_raw
     scoreboard players operation $output onyx.rng /= #discard onyx.rng
 }
 
@@ -39,20 +39,20 @@ function lcg_raw {
 function normal_start {
     scoreboard players operation #temp onyx.rng = #range onyx.rng
     scoreboard players remove #temp onyx.rng 1
-    function onyxlib:rng/normal
+    function lib:rng/normal
     scoreboard players operation $output onyx.rng += $min onyx.rng
 }
 
 function normal {
-    function onyxlib:rng/lcg_raw
+    function lib:rng/lcg_raw
     execute if score $output onyx.rng matches 0.. run scoreboard players operation $output onyx.rng /= $2 onyx.const
-    execute if score $output onyx.rng matches ..-1 run function onyxlib:rng/shift_right
+    execute if score $output onyx.rng matches ..-1 run function lib:rng/shift_right
     scoreboard players operation $output onyx.rng /= #discard onyx.rng
     scoreboard players operation #temp1 onyx.rng = $output onyx.rng
     scoreboard players operation $output onyx.rng %= #range onyx.rng
     scoreboard players operation #temp1 oynx.rng -= $output onyx.rng
     scoreboard players operation #temp1 onyx.rng += #temp onyx.rng
-    execute if score #temp1 onyx.rng matches ..-1 run function onyxlib:rng/normal
+    execute if score #temp1 onyx.rng matches ..-1 run function lib:rng/normal
 }
 
 function shift_right {

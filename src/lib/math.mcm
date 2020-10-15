@@ -7,7 +7,7 @@ macro sin {
     !IF(!"$$1".startsWith("$$")){
         scoreboard players operation $input onyx.math = $$0 $$1
     }
-    function onyxlib:math/sin/main
+    function lib:math/sin/main
 }
 
 macro cos {
@@ -19,7 +19,7 @@ macro cos {
     !IF(!"$$1".startsWith("$$")){
         scoreboard players operation $input onyx.math = $$0 $$1
     }
-    function onyxlib:math/cos/main
+    function lib:math/cos/main
 }
 
 macro tan {
@@ -31,13 +31,13 @@ macro tan {
     !IF(!"$$1".startsWith("$$")){
         scoreboard players operation $input onyx.math = $$0 $$1
     }
-    function onyxlib:math/tan/main
+    function lib:math/tan/main
 }
 
 macro pow {
     scoreboard players operation $input onyx.math = $$0 $$1
     scoreboard players set $exponent onyx.math <%Math.floor($$2)%>
-    function onyxlib:math/pow/main
+    function lib:math/pow/main
 }
 
 macro sqrt {
@@ -49,7 +49,7 @@ macro sqrt {
     !IF(!"$$1".startsWith("$$")){
         scoreboard players operation $input onyx.math = $$0 $$1
     }
-    function onyxlib:math/sqrt/main
+    function lib:math/sqrt/main
 }
 
 macro NOT {
@@ -61,7 +61,7 @@ macro NOT {
     !IF(!"$$1".startsWith("$$")){
         scoreboard players operation $input_1 onyx.bitwise = $$0 $$1
     }
-    function onyxlib:math/bitwise/not/main
+    function lib:math/bitwise/not/main
 }
 
 macro AND {
@@ -74,7 +74,7 @@ macro AND {
     !IF(!"$$3".startsWith("$$")){
         scoreboard players operation $input_2 onyx.bitwise = $$2 $$3
     }
-    function onyxlib:math/bitwise/and/main
+    function lib:math/bitwise/and/main
 }
 
 macro LEFT_SHIFT {
@@ -87,7 +87,7 @@ macro LEFT_SHIFT {
     !IF(!"$$3".startsWith("$$")){
         scoreboard players operation $input_1 onyx.bitwise = $$2 $$3
     }
-    function onyxlib:math/bitwise/left_shift/main
+    function lib:math/bitwise/left_shift/main
 }
 
 macro RIGHT_SHIFT {
@@ -100,7 +100,7 @@ macro RIGHT_SHIFT {
     !IF(!"$$3".startsWith("$$")){
         scoreboard players operation $input_1 onyx.bitwise = $$2 $$3
     }
-    function onyxlib:math/bitwise/right_shift/main
+    function lib:math/bitwise/right_shift/main
 }
 
 macro OR {
@@ -113,7 +113,7 @@ macro OR {
     !IF(!"$$3".startsWith("$$")){
         scoreboard players operation $input_1 onyx.bitwise = $$2 $$3
     }
-    function onyxlib:math/bitwise/or/main
+    function lib:math/bitwise/or/main
 }
 
 macro XOR {
@@ -126,5 +126,5 @@ macro XOR {
     !IF(!"$$3".startsWith("$$")){
         scoreboard players operation $input_1 onyx.bitwise = $$2 $$3
     }
-    function onyxlib:math/bitwise/xor/main
+    function lib:math/bitwise/xor/main
 }
